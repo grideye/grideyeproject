@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tension Calculator 2</title>
+    <meta name="Cale Spratt and Billy Kita" content="The Crosby Group LLC - Pro Department">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="jquery.mobile-1.3.1.min.css" rel="stylesheet">
+    <script src="jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="jquery.mobile-1.3.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#calculate').on('click', function () {
+                calculate();
+            });
+
+            $('.largeDistance').text('ft');
+            $('.smallWeight').text('lbs');
+        });
+
+        function calculate() {
+            var T1 = 500;
+            var T2 = 500;
+
+            $('#T1').text(T1);
+            $('#T2').text(T2);
+
+            $('#calculator input').each(function () {
+                $('#' + $(this).attr('id') + 'Result').text($(this).val());
+            });
+
+            $.mobile.changePage('#results', {
+                transition: 'slide'
+            });
+        }
+    </script>
+    <style>
+        #calculator .ui-bar
+        {
+            height: 50px;
+        }
+        #calculator .ui-bar label
+        {
+            margin: 0.5em 0;
+        }
+        #results .ui-collapsible-content
+        {
+            padding: 0px 0px;
+        }
+        #results .ui-bar
+        {
+            height: 25px;
+        }
+        /*
+        label.ui-input-text
+        {
+            font-weight: 700;
+        }*/
+        input.ui-input-text
+        {
+            display: inline-block;
+            width: 60%;
+        }
+        
+        span.question {
+        	cursor: pointer;
+        	display: inline-block;
+        	width: 20px;
+        	height: 20px;
+        	background-color: #89A4CC;
+        	line-height: 20px;
+        	color: white;
+        	font-size: 1em;
+        	font-weight: bold;
+        	border-radius: 10px;
+        	text-align: center;
+        	position: relative;
+        	left: 90%;
+			top: -35px;
+        }
+        
+        span.question:hover {
+        	background-color: #3D6199;
+        }
+		
+		.info-button {
+			display: inline-block;
+			width: 24px;
+			height: 24px;
+			position: relative;
+        	left: 90%;
+			top: -50px;
+			text-align: center;
+		}
+		
+		div h3{
+			text-align:center;
+		}
+		
+		.dotheader {
+			border-top: 3px dotted #999;
+			border-bottom: 3px dotted #999;
+			text-align: center;
+			font-weight: bold;
+			padding: 5px 0;
+			margin: 15px 0 0px 0;
+			color: red;
+			font-size: 8px;
+			
+		}
+		
+		.important .upper {
+			font-size: 8px;
+		}
+		
+		div.header-image {
+			display: block;
+			background:url("Capture.PNG") top center no-repeat;
+			height: 220px;
+			width: 258px;
+			margin: auto;
+		}
+		
+		.overlay-button {
+			height: 30px;
+			width: 40px;
+			position: relative;
+			display: block;
+		}
+		
+		#H {
+			postion: relative;
+			left: 83px;
+			top: 60px;
+		}
+		
+		#S1 {
+			postion: absolute;
+			left: 25px;
+			top: 3px;
+		}
+		
+		#S2 {
+			postion: relative;
+			left: 158px;
+			top: -40px;
+		}
+		
+		#D1 {
+			postion: relative;
+			left: 46px;
+			top: 68px;
+		}
+		
+		#D2 {
+			postion: relative;
+			left: 175px;
+			top: 28px;
+		}	
+		
+		
+			
+    </style>
+</head>
+<body>
+    <div id="calculator" data-role="page">
+        <div data-role="header" style="background: white">
+            <div class="header-image">
+				<a href="#popupH" data-rel="popup" data-role="button" class="overlay-button" id="H">H</a>
+				<a href="#popupS1" data-rel="popup" data-role="button" id="S1" class="overlay-button">S1</a>
+				<a href="#popupS2" data-rel="popup" data-role="button" id="S2" class="overlay-button">S2</a>
+				<a href="#popupD1" data-rel="popup" data-role="button" id="D1" class="overlay-button">D1</a>
+				<a href="#popupD2" data-rel="popup" data-role="button" id="D2" class="overlay-button">D2</a>
+			</div>
+			<div data-role="popup" id="popupH" style="height: 315px" class="ui-content" >
+				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right"></a>
+				<img src="COG_drawings/Capture_H.png" alt="COG_H"/>
+				<input type="text" name="H" id="H-popup-input" placeholder="Height..." data-theme="a"/>
+				<div>
+					<a href="#" data-role="button" style="display: block; width: 60%; margin-left: auto; margin-right: auto">Next</a>
+					<a href="#" data-role="button" data-icon="info"data-theme="b" data-iconpos="notext" class="info-button"></a>
+				</div>
+			</div>
+			<div data-role="popup" id="popupS1" class="ui-content" style="height: 315px">
+				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right"></a>
+				<img src="COG_drawings/Capture_S1.png" alt="COG_S1"/>
+				<input type="text" name="D" id="S1-popup-input" placeholder="S1..." data-theme="a"/>
+				<div>
+					<a href="#" data-role="button" style="display: block; width: 60%; margin-left: auto; margin-right: auto">Next</a>
+					<a href="#" data-role="button" data-icon="info"data-theme="b" data-iconpos="notext" class="info-button"></a>
+				</div>
+			</div>
+			<div data-role="popup" id="popupS2" class="ui-content" style="height: 315px">
+				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right"></a>
+				<img src="COG_drawings/Capture_S2.png" alt="COG_S2"/>
+				<input type="text" name="S2" id="H-popup-input" placeholder="S2..." data-theme="a"/>
+				<div>
+					<a href="#" data-role="button" style="display: block; width: 60%; margin-left: auto; margin-right: auto">Next</a>
+					<a href="#" data-role="button" data-icon="info"data-theme="b" data-iconpos="notext" class="info-button"></a>
+				</div>
+			</div>
+			<div data-role="popup" id="popupD1" class="ui-content" style="height: 315px">
+				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right"></a>
+				<img src="COG_drawings/Capture_D1.png" alt="COG_D1"/>
+				<input type="text" name="D1" id="D1-popup-input" placeholder="D1..." data-theme="a"/>
+				<div>
+					<a href="#" data-role="button" style="display: block; width: 60%; margin-left: auto; margin-right: auto">Next</a>
+					<a href="#" data-role="button" data-icon="info"data-theme="b" data-iconpos="notext" class="info-button"></a>
+				</div>
+			</div>
+			<div data-role="popup" id="popupD2" class="ui-content" style="height: 315px">
+				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right"></a>	
+				<img src="COG_drawings/Capture_D2.png" alt="COG_D2"/>
+				<input type="text" name="D2" id="D2-popup-input" placeholder="D2..." data-theme="a"/>
+				<div>
+					<a href="#" data-role="button" style="display: block; width: 60%; margin-left: auto; margin-right: auto">Next</a>
+					<div onclick="$('#popover').css('display', 'block');">
+						<a href="#information-popup" data-role="button" data-icon="info"data-theme="b" data-iconpos="notext" class="info-button"></a>
+						<div id="popover" class="tip">Eat your vegetables
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+        <div data-role="content">
+            <form action="#">
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <div class="ui-bar ui-bar-c">
+                            <label for="loadWeight">Load Weight (<span class="smallWeight"></span>)</label>
+                        </div>
+                    </div>
+                    <div class="ui-block-b">
+                        <div class="ui-bar ui-bar-c">
+                            <input id="loadWeight" type="number">
+                        </div>
+                    </div>
+                    <div class="ui-block-a">
+                        <div class="ui-bar ui-bar-c">
+                            <label for="H">H (<span class="largeDistance"></span>)</label>
+                        </div>
+                    </div>
+                    <div class="ui-block-b">
+                        <div class="ui-bar ui-bar-c">
+                            <input id="H" type="number">
+                        </div>
+                    </div>
+                    <div class="ui-block-a">
+                        <div class="ui-bar ui-bar-c">
+                            <label for="S1">S1 (<span class="largeDistance"></span>)</label>
+                        </div>
+                    </div>
+                    <div class="ui-block-b">
+                        <div class="ui-bar ui-bar-c">
+                            <input id="S1" type="number">
+                        </div>
+                    </div>
+                    <div class="ui-block-a">
+                        <div class="ui-bar ui-bar-c">
+                            <label for="S2">S2 (<span class="largeDistance"></span>)</label>
+                        </div>
+                    </div>
+                    <div class="ui-block-b">
+                        <div class="ui-bar ui-bar-c">
+                            <input id="S2" type="number">
+                        </div>
+                    </div>
+                    <div class="ui-block-a">
+                        <div class="ui-bar ui-bar-c">
+                            <label for="D1">D1 (<span class="largeDistance"></span>)</label>
+                        </div>
+                    </div>
+                    <div class="ui-block-b">
+                        <div class="ui-bar ui-bar-c">
+                            <input id="D1" type="number">
+                        </div>
+                    </div>
+                    <div class="ui-block-a">
+                        <div class="ui-bar ui-bar-c">
+                            <label for="D2">D2 (<span class="largeDistance"></span>)</label>
+                        </div>
+                    </div>
+                    <div class="ui-block-b">
+                        <div class="ui-bar ui-bar-c">
+                            <input id="D2" type="number">
+                        </div>
+                    </div>
+                </div>
+				<ul data-role="listview" data-inset="true" class="ui-btn-text">
+					<li data-theme="a"><a href="#results" style="text-align: center">Calculate</a></li>
+				</ul>
+            </form>
+        </div>
+    </div>
+	<div id="results" data-role="page">
+        <div data-role="header">
+            <a data-icon="back" data-iconpos="notext" data-rel="back">Back</a>
+            <h1>Results</h1>
+        </div>
+        <div data-role="content">
+            <div data-role="collapsible" data-content-theme="f">
+                <h2>Parameters</h2>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <div class="ui-bar ui-bar-c">
+                            <label for="loadWeight">Load Weight (<span class="smallWeight"></span>)</label>
+                        </div>
+                    </div>
+                    <div class="ui-block-b">
+                        <div class="ui-bar ui-bar-c">
+                            <span id="loadWeightResult"></span>
+                        </div>
+                    </div>
+                    <div class="ui-block-a">
+                        <div class="ui-bar ui-bar-c">
+                            <label for="H">H (<span class="largeDistance"></span>)</label>
+                        </div>
+                    </div>
+                    <div class="ui-block-b">
+                        <div class="ui-bar ui-bar-c">
+                            <span id="HResult"></span>
+                        </div>
+                    </div>
+                    <div class="ui-block-a">
+                        <div class="ui-bar ui-bar-c">
+                            <label for="S1">S1 (<span class="largeDistance"></span>)</label>
+                        </div>
+                    </div>
+                    <div class="ui-block-b">
+                        <div class="ui-bar ui-bar-c">
+                            <span id="S1Result"></span>
+                        </div>
+                    </div>
+                    <div class="ui-block-a">
+                        <div class="ui-bar ui-bar-c">
+                            <label for="S2">S2 (<span class="largeDistance"></span>)</label>
+                        </div>
+                    </div>
+                    <div class="ui-block-b">
+                        <div class="ui-bar ui-bar-c">
+                            <span id="S2Result"></span>
+                        </div>
+                    </div>
+                    <div class="ui-block-a">
+                        <div class="ui-bar ui-bar-c">
+                            <label for="D1">D1 (<span class="largeDistance"></span>)</label>
+                        </div>
+                    </div>
+                    <div class="ui-block-b">
+                        <div class="ui-bar ui-bar-c">
+                            <span id="D1Result"></span>
+                        </div>
+                    </div>
+                    <div class="ui-block-a">
+                        <div class="ui-bar ui-bar-c">
+                            <label for="D2">D2 (<span class="largeDistance"></span>)</label>
+                        </div>
+                    </div>
+                    <div class="ui-block-b">
+                        <div class="ui-bar ui-bar-c">
+                            <span id="D2Result"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-overlay-c ui-corner-all ui-shadow" style="padding: 10px 10px; margin-top: 20px">
+            	<div>
+            		<span class="question">?</span>
+	            	<h2 style="margin: 0.25em 0px; display: inline">Results</h2>
+	            </div>
+	            <div class="ui-grid-a ui-corner-all ui-shadow">
+	                <div class="ui-block-a">
+	                    <div class="ui-bar ui-bar-c">
+	                        <label>T1 (<span class="smallWeight"></span>)</label>
+	                    </div>
+	                </div>
+	                <div class="ui-block-b">
+	                    <div class="ui-bar ui-bar-c">
+	                        <span id="T1"></span>
+	                    </div>
+	                </div>
+	                <div class="ui-block-a">
+	                    <div class="ui-bar ui-bar-c">
+	                        <label>T2 (<span class="smallWeight"></span>)</label>
+	                    </div>
+	                </div>
+	                <div class="ui-block-b">
+	                    <div class="ui-bar ui-bar-c">
+	                        <span id="T2"></span>
+	                    </div>
+	                </div>
+	            </div>
+            </div>
+			<div class="dotheader">
+				<h1>Important</h1>
+				<p class="important upper">
+					These calculators are mathematical tools only. All calculations and decisions must be the responsibility of a qualified person.
+				</p>
+			</div>
+        </div>
+    </div>
+</body>
+</html>

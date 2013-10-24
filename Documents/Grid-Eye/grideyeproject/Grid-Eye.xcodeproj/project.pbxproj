@@ -1,0 +1,720 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5A19F243F8C14053927C13EE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E81B5193343473F9DB9DB6F /* libPods.a */; };
+		C31AC6B617F945FF00B5D328 /* OpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = C31AC6B517F945FF00B5D328 /* OpenGLView.m */; };
+		C31AC6B717F945FF00B5D328 /* OpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = C31AC6B517F945FF00B5D328 /* OpenGLView.m */; };
+		C32A5E3718037554002315D9 /* MenuViewcontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = C32A5E3518037554002315D9 /* MenuViewcontroller.m */; };
+		C32A5E3818037554002315D9 /* MenuViewcontroller.xib in Resources */ = {isa = PBXBuildFile; fileRef = C32A5E3618037554002315D9 /* MenuViewcontroller.xib */; };
+		C3386CB417E7850B005F592A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3386CB317E7850B005F592A /* UIKit.framework */; };
+		C3386CB617E7850B005F592A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3386CB517E7850B005F592A /* Foundation.framework */; };
+		C3386CB817E7850B005F592A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3386CB717E7850B005F592A /* CoreGraphics.framework */; };
+		C3386CBE17E7850B005F592A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3386CBC17E7850B005F592A /* InfoPlist.strings */; };
+		C3386CC017E7850B005F592A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3386CBF17E7850B005F592A /* main.m */; };
+		C3386CC417E7850B005F592A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3386CC317E7850B005F592A /* AppDelegate.m */; };
+		C3386CC617E7850B005F592A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C3386CC517E7850B005F592A /* Default.png */; };
+		C3386CC817E7850B005F592A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3386CC717E7850B005F592A /* Default@2x.png */; };
+		C3386CCA17E7850B005F592A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3386CC917E7850B005F592A /* Default-568h@2x.png */; };
+		C3386CCD17E7850B005F592A /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3386CCB17E7850B005F592A /* MainStoryboard_iPhone.storyboard */; };
+		C3386CD017E7850B005F592A /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3386CCE17E7850B005F592A /* MainStoryboard_iPad.storyboard */; };
+		C3386CD317E7850B005F592A /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3386CD217E7850B005F592A /* FirstViewController.m */; };
+		C3386CD517E7850B005F592A /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = C3386CD417E7850B005F592A /* first.png */; };
+		C3386CD717E7850B005F592A /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3386CD617E7850B005F592A /* first@2x.png */; };
+		C3386CDA17E7850B005F592A /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3386CD917E7850B005F592A /* SecondViewController.m */; };
+		C3386CDC17E7850B005F592A /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = C3386CDB17E7850B005F592A /* second.png */; };
+		C3386CDE17E7850B005F592A /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3386CDD17E7850B005F592A /* second@2x.png */; };
+		C3386CEC17E7A28E005F592A /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C3386CE917E7A28E005F592A /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C3386CED17E7A28E005F592A /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C3386CEB17E7A28E005F592A /* Reachability.m */; };
+		C340C41017EE5D1F00C7B46F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C340C40F17EE5D1F00C7B46F /* QuartzCore.framework */; };
+		C340C41217EE5D3400C7B46F /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C340C41117EE5D3400C7B46F /* GLKit.framework */; };
+		C340C41417EE5D3F00C7B46F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C340C41317EE5D3F00C7B46F /* OpenGLES.framework */; };
+		C340C43F17EFABF300C7B46F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3386CBF17E7850B005F592A /* main.m */; };
+		C340C44017EFABF300C7B46F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3386CC317E7850B005F592A /* AppDelegate.m */; };
+		C340C44117EFABF300C7B46F /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3386CD217E7850B005F592A /* FirstViewController.m */; };
+		C340C44217EFABF300C7B46F /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3386CD917E7850B005F592A /* SecondViewController.m */; };
+		C340C44317EFABF300C7B46F /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C3386CE917E7A28E005F592A /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C340C44417EFABF300C7B46F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C3386CEB17E7A28E005F592A /* Reachability.m */; };
+		C340C44617EFABF300C7B46F /* Grideye.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C3873D7B17EBF275007B1EEF /* Grideye.xcdatamodeld */; };
+		C340C44917EFABF300C7B46F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C340C41317EE5D3F00C7B46F /* OpenGLES.framework */; };
+		C340C44A17EFABF300C7B46F /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C340C41117EE5D3400C7B46F /* GLKit.framework */; };
+		C340C44B17EFABF300C7B46F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C340C40F17EE5D1F00C7B46F /* QuartzCore.framework */; };
+		C340C44C17EFABF300C7B46F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3386CB317E7850B005F592A /* UIKit.framework */; };
+		C340C44D17EFABF300C7B46F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3386CB517E7850B005F592A /* Foundation.framework */; };
+		C340C44E17EFABF300C7B46F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3386CB717E7850B005F592A /* CoreGraphics.framework */; };
+		C340C44F17EFABF300C7B46F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E81B5193343473F9DB9DB6F /* libPods.a */; };
+		C340C45117EFABF300C7B46F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3386CBC17E7850B005F592A /* InfoPlist.strings */; };
+		C340C45217EFABF300C7B46F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C3386CC517E7850B005F592A /* Default.png */; };
+		C340C45317EFABF300C7B46F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3386CC717E7850B005F592A /* Default@2x.png */; };
+		C340C45417EFABF300C7B46F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3386CC917E7850B005F592A /* Default-568h@2x.png */; };
+		C340C45517EFABF300C7B46F /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3386CCB17E7850B005F592A /* MainStoryboard_iPhone.storyboard */; };
+		C340C45617EFABF300C7B46F /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3386CCE17E7850B005F592A /* MainStoryboard_iPad.storyboard */; };
+		C340C45717EFABF300C7B46F /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = C3386CD417E7850B005F592A /* first.png */; };
+		C340C45817EFABF300C7B46F /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3386CD617E7850B005F592A /* first@2x.png */; };
+		C340C45917EFABF300C7B46F /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = C3386CDB17E7850B005F592A /* second.png */; };
+		C340C45A17EFABF300C7B46F /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3386CDD17E7850B005F592A /* second@2x.png */; };
+		C340C45B17EFABF300C7B46F /* sensor.json in Resources */ = {isa = PBXBuildFile; fileRef = C3873D7617EBECB8007B1EEF /* sensor.json */; };
+		C35A3646180DB77300262EC8 /* D3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C35A3645180DB77300262EC8 /* D3ViewController.m */; };
+		C378FA2B1818E7320096A5BC /* D3_graph.html in Resources */ = {isa = PBXBuildFile; fileRef = C378FA2A1818E7320096A5BC /* D3_graph.html */; };
+		C378FA2C1818E7320096A5BC /* D3_graph.html in Resources */ = {isa = PBXBuildFile; fileRef = C378FA2A1818E7320096A5BC /* D3_graph.html */; };
+		C378FA2E1818E9A20096A5BC /* TensionCalculator2.html in Resources */ = {isa = PBXBuildFile; fileRef = C378FA2D1818E9A20096A5BC /* TensionCalculator2.html */; };
+		C378FA2F1818E9A20096A5BC /* TensionCalculator2.html in Resources */ = {isa = PBXBuildFile; fileRef = C378FA2D1818E9A20096A5BC /* TensionCalculator2.html */; };
+		C378FA321818EC070096A5BC /* D3AnalysisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C378FA311818EC070096A5BC /* D3AnalysisViewController.m */; };
+		C378FA331818EC070096A5BC /* D3AnalysisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C378FA311818EC070096A5BC /* D3AnalysisViewController.m */; };
+		C3873D7717EBECB8007B1EEF /* sensor.json in Resources */ = {isa = PBXBuildFile; fileRef = C3873D7617EBECB8007B1EEF /* sensor.json */; };
+		C3873D7D17EBF275007B1EEF /* Grideye.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C3873D7B17EBF275007B1EEF /* Grideye.xcdatamodeld */; };
+		C397BCAE17F1384C00C86ADC /* cells.json in Resources */ = {isa = PBXBuildFile; fileRef = C397BCAD17F1384C00C86ADC /* cells.json */; };
+		C397BCAF17F1384C00C86ADC /* cells.json in Resources */ = {isa = PBXBuildFile; fileRef = C397BCAD17F1384C00C86ADC /* cells.json */; };
+		C39B6981180C611500066138 /* MenuViewcontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = C32A5E3518037554002315D9 /* MenuViewcontroller.m */; };
+		C39B6983180C61BB00066138 /* GrideyeSeedDatabase.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C39B6982180C61BB00066138 /* GrideyeSeedDatabase.sqlite */; };
+		C39B6984180C61BB00066138 /* GrideyeSeedDatabase.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C39B6982180C61BB00066138 /* GrideyeSeedDatabase.sqlite */; };
+		C3C7C69C17FA5BDD00069FC1 /* Cells.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C7C69417FA5BDD00069FC1 /* Cells.m */; };
+		C3C7C69D17FA5BDD00069FC1 /* Cells.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C7C69417FA5BDD00069FC1 /* Cells.m */; };
+		C3C7C69E17FA5BDD00069FC1 /* Sensor.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C7C69617FA5BDD00069FC1 /* Sensor.m */; };
+		C3C7C69F17FA5BDD00069FC1 /* Sensor.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C7C69617FA5BDD00069FC1 /* Sensor.m */; };
+		C3C7C6A017FA5BDD00069FC1 /* _Cells.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C7C69917FA5BDD00069FC1 /* _Cells.m */; };
+		C3C7C6A117FA5BDD00069FC1 /* _Cells.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C7C69917FA5BDD00069FC1 /* _Cells.m */; };
+		C3C7C6A217FA5BDD00069FC1 /* _Sensor.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C7C69B17FA5BDD00069FC1 /* _Sensor.m */; };
+		C3C7C6A317FA5BDD00069FC1 /* _Sensor.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C7C69B17FA5BDD00069FC1 /* _Sensor.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6B6B3479A55347BCB95C4851 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		7E81B5193343473F9DB9DB6F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C31AC6B417F945FF00B5D328 /* OpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLView.h; sourceTree = "<group>"; };
+		C31AC6B517F945FF00B5D328 /* OpenGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLView.m; sourceTree = "<group>"; };
+		C32A5E3418037554002315D9 /* MenuViewcontroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewcontroller.h; sourceTree = "<group>"; };
+		C32A5E3518037554002315D9 /* MenuViewcontroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewcontroller.m; sourceTree = "<group>"; };
+		C32A5E3618037554002315D9 /* MenuViewcontroller.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewcontroller.xib; sourceTree = "<group>"; };
+		C3386CB017E7850B005F592A /* Grid-Eye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grid-Eye.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3386CB317E7850B005F592A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C3386CB517E7850B005F592A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C3386CB717E7850B005F592A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C3386CBB17E7850B005F592A /* Grid-Eye-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Grid-Eye-Info.plist"; sourceTree = "<group>"; };
+		C3386CBD17E7850B005F592A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C3386CBF17E7850B005F592A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C3386CC117E7850B005F592A /* Grid-Eye-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Grid-Eye-Prefix.pch"; sourceTree = "<group>"; };
+		C3386CC217E7850B005F592A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C3386CC317E7850B005F592A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C3386CC517E7850B005F592A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		C3386CC717E7850B005F592A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		C3386CC917E7850B005F592A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		C3386CCC17E7850B005F592A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		C3386CCF17E7850B005F592A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		C3386CD117E7850B005F592A /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		C3386CD217E7850B005F592A /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		C3386CD417E7850B005F592A /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		C3386CD617E7850B005F592A /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		C3386CD817E7850B005F592A /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		C3386CD917E7850B005F592A /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		C3386CDB17E7850B005F592A /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		C3386CDD17E7850B005F592A /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		C3386CE817E7A28E005F592A /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		C3386CE917E7A28E005F592A /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		C3386CEA17E7A28E005F592A /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		C3386CEB17E7A28E005F592A /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		C340C40F17EE5D1F00C7B46F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C340C41117EE5D3400C7B46F /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		C340C41317EE5D3F00C7B46F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		C340C42217EFA9A700C7B46F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C340C46017EFABF300C7B46F /* Grid-Eye copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grid-Eye copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C340C46117EFABF400C7B46F /* Grid-Eye copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Grid-Eye copy-Info.plist"; path = "/Users/administrator/Desktop/Grid-Eye/Grid-Eye/Grid-Eye copy-Info.plist"; sourceTree = "<absolute>"; };
+		C35A3644180DB77300262EC8 /* D3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3ViewController.h; sourceTree = "<group>"; };
+		C35A3645180DB77300262EC8 /* D3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3ViewController.m; sourceTree = "<group>"; };
+		C378FA2A1818E7320096A5BC /* D3_graph.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = D3_graph.html; sourceTree = "<group>"; };
+		C378FA2D1818E9A20096A5BC /* TensionCalculator2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = TensionCalculator2.html; sourceTree = "<group>"; };
+		C378FA301818EC070096A5BC /* D3AnalysisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3AnalysisViewController.h; sourceTree = "<group>"; };
+		C378FA311818EC070096A5BC /* D3AnalysisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3AnalysisViewController.m; sourceTree = "<group>"; };
+		C3873D7617EBECB8007B1EEF /* sensor.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sensor.json; sourceTree = "<group>"; };
+		C3873D7C17EBF275007B1EEF /* Grideye.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Grideye.xcdatamodel; sourceTree = "<group>"; };
+		C397BCAD17F1384C00C86ADC /* cells.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cells.json; sourceTree = "<group>"; };
+		C39B6982180C61BB00066138 /* GrideyeSeedDatabase.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = GrideyeSeedDatabase.sqlite; sourceTree = "<group>"; };
+		C3C7C69317FA5BDD00069FC1 /* Cells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cells.h; sourceTree = "<group>"; };
+		C3C7C69417FA5BDD00069FC1 /* Cells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cells.m; sourceTree = "<group>"; };
+		C3C7C69517FA5BDD00069FC1 /* Sensor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sensor.h; sourceTree = "<group>"; };
+		C3C7C69617FA5BDD00069FC1 /* Sensor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sensor.m; sourceTree = "<group>"; };
+		C3C7C69817FA5BDD00069FC1 /* _Cells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Cells.h; sourceTree = "<group>"; };
+		C3C7C69917FA5BDD00069FC1 /* _Cells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Cells.m; sourceTree = "<group>"; };
+		C3C7C69A17FA5BDD00069FC1 /* _Sensor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Sensor.h; sourceTree = "<group>"; };
+		C3C7C69B17FA5BDD00069FC1 /* _Sensor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Sensor.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C3386CAD17E7850B005F592A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C340C41417EE5D3F00C7B46F /* OpenGLES.framework in Frameworks */,
+				C340C41217EE5D3400C7B46F /* GLKit.framework in Frameworks */,
+				C340C41017EE5D1F00C7B46F /* QuartzCore.framework in Frameworks */,
+				C3386CB417E7850B005F592A /* UIKit.framework in Frameworks */,
+				C3386CB617E7850B005F592A /* Foundation.framework in Frameworks */,
+				C3386CB817E7850B005F592A /* CoreGraphics.framework in Frameworks */,
+				5A19F243F8C14053927C13EE /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C340C44817EFABF300C7B46F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C340C44917EFABF300C7B46F /* OpenGLES.framework in Frameworks */,
+				C340C44A17EFABF300C7B46F /* GLKit.framework in Frameworks */,
+				C340C44B17EFABF300C7B46F /* QuartzCore.framework in Frameworks */,
+				C340C44C17EFABF300C7B46F /* UIKit.framework in Frameworks */,
+				C340C44D17EFABF300C7B46F /* Foundation.framework in Frameworks */,
+				C340C44E17EFABF300C7B46F /* CoreGraphics.framework in Frameworks */,
+				C340C44F17EFABF300C7B46F /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C3386CA717E7850B005F592A = {
+			isa = PBXGroup;
+			children = (
+				C3386CB917E7850B005F592A /* Grid-Eye */,
+				C3386CB217E7850B005F592A /* Frameworks */,
+				C3386CB117E7850B005F592A /* Products */,
+				6B6B3479A55347BCB95C4851 /* Pods.xcconfig */,
+				C340C46117EFABF400C7B46F /* Grid-Eye copy-Info.plist */,
+			);
+			sourceTree = "<group>";
+		};
+		C3386CB117E7850B005F592A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C3386CB017E7850B005F592A /* Grid-Eye.app */,
+				C340C46017EFABF300C7B46F /* Grid-Eye copy.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C3386CB217E7850B005F592A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C340C41317EE5D3F00C7B46F /* OpenGLES.framework */,
+				C340C41117EE5D3400C7B46F /* GLKit.framework */,
+				C340C40F17EE5D1F00C7B46F /* QuartzCore.framework */,
+				C3386CB317E7850B005F592A /* UIKit.framework */,
+				C3386CB517E7850B005F592A /* Foundation.framework */,
+				C3386CB717E7850B005F592A /* CoreGraphics.framework */,
+				7E81B5193343473F9DB9DB6F /* libPods.a */,
+				C340C42217EFA9A700C7B46F /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C3386CB917E7850B005F592A /* Grid-Eye */ = {
+			isa = PBXGroup;
+			children = (
+				C3C7C69117FA5BDD00069FC1 /* CoreData */,
+				C3386CE717E7A28E005F592A /* Comm */,
+				C3386CC217E7850B005F592A /* AppDelegate.h */,
+				C3386CC317E7850B005F592A /* AppDelegate.m */,
+				C3386CCB17E7850B005F592A /* MainStoryboard_iPhone.storyboard */,
+				C3386CCE17E7850B005F592A /* MainStoryboard_iPad.storyboard */,
+				C3386CD117E7850B005F592A /* FirstViewController.h */,
+				C3386CD217E7850B005F592A /* FirstViewController.m */,
+				C35A3644180DB77300262EC8 /* D3ViewController.h */,
+				C35A3645180DB77300262EC8 /* D3ViewController.m */,
+				C378FA301818EC070096A5BC /* D3AnalysisViewController.h */,
+				C378FA311818EC070096A5BC /* D3AnalysisViewController.m */,
+				C3386CD417E7850B005F592A /* first.png */,
+				C3386CD617E7850B005F592A /* first@2x.png */,
+				C3386CD817E7850B005F592A /* SecondViewController.h */,
+				C3386CD917E7850B005F592A /* SecondViewController.m */,
+				C32A5E3418037554002315D9 /* MenuViewcontroller.h */,
+				C32A5E3518037554002315D9 /* MenuViewcontroller.m */,
+				C32A5E3618037554002315D9 /* MenuViewcontroller.xib */,
+				C3386CDB17E7850B005F592A /* second.png */,
+				C3386CDD17E7850B005F592A /* second@2x.png */,
+				C3386CBA17E7850B005F592A /* Supporting Files */,
+				C31AC6B417F945FF00B5D328 /* OpenGLView.h */,
+				C31AC6B517F945FF00B5D328 /* OpenGLView.m */,
+			);
+			path = "Grid-Eye";
+			sourceTree = "<group>";
+		};
+		C3386CBA17E7850B005F592A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C378FA2D1818E9A20096A5BC /* TensionCalculator2.html */,
+				C39B6982180C61BB00066138 /* GrideyeSeedDatabase.sqlite */,
+				C3386CBB17E7850B005F592A /* Grid-Eye-Info.plist */,
+				C3386CBC17E7850B005F592A /* InfoPlist.strings */,
+				C3386CBF17E7850B005F592A /* main.m */,
+				C3873D7617EBECB8007B1EEF /* sensor.json */,
+				C3386CC117E7850B005F592A /* Grid-Eye-Prefix.pch */,
+				C3386CC517E7850B005F592A /* Default.png */,
+				C3386CC717E7850B005F592A /* Default@2x.png */,
+				C3386CC917E7850B005F592A /* Default-568h@2x.png */,
+				C3873D7B17EBF275007B1EEF /* Grideye.xcdatamodeld */,
+				C397BCAD17F1384C00C86ADC /* cells.json */,
+				C378FA2A1818E7320096A5BC /* D3_graph.html */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C3386CE717E7A28E005F592A /* Comm */ = {
+			isa = PBXGroup;
+			children = (
+				C3386CE817E7A28E005F592A /* JSONKit.h */,
+				C3386CE917E7A28E005F592A /* JSONKit.m */,
+				C3386CEA17E7A28E005F592A /* Reachability.h */,
+				C3386CEB17E7A28E005F592A /* Reachability.m */,
+			);
+			path = Comm;
+			sourceTree = "<group>";
+		};
+		C3C7C69117FA5BDD00069FC1 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				C3C7C69217FA5BDD00069FC1 /* Human */,
+				C3C7C69717FA5BDD00069FC1 /* Machine */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		C3C7C69217FA5BDD00069FC1 /* Human */ = {
+			isa = PBXGroup;
+			children = (
+				C3C7C69317FA5BDD00069FC1 /* Cells.h */,
+				C3C7C69417FA5BDD00069FC1 /* Cells.m */,
+				C3C7C69517FA5BDD00069FC1 /* Sensor.h */,
+				C3C7C69617FA5BDD00069FC1 /* Sensor.m */,
+			);
+			path = Human;
+			sourceTree = "<group>";
+		};
+		C3C7C69717FA5BDD00069FC1 /* Machine */ = {
+			isa = PBXGroup;
+			children = (
+				C3C7C69817FA5BDD00069FC1 /* _Cells.h */,
+				C3C7C69917FA5BDD00069FC1 /* _Cells.m */,
+				C3C7C69A17FA5BDD00069FC1 /* _Sensor.h */,
+				C3C7C69B17FA5BDD00069FC1 /* _Sensor.m */,
+			);
+			path = Machine;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C3386CAF17E7850B005F592A /* Grid-Eye */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3386CE117E7850B005F592A /* Build configuration list for PBXNativeTarget "Grid-Eye" */;
+			buildPhases = (
+				F648C05DF0B74805BEE105CA /* Check Pods Manifest.lock */,
+				C3386CAC17E7850B005F592A /* Sources */,
+				C3386CAD17E7850B005F592A /* Frameworks */,
+				C3386CAE17E7850B005F592A /* Resources */,
+				6E6075EDCB4E4D80956992FD /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Grid-Eye";
+			productName = "Grid-Eye";
+			productReference = C3386CB017E7850B005F592A /* Grid-Eye.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C340C43C17EFABF300C7B46F /* Generate Seed Database */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C340C45D17EFABF300C7B46F /* Build configuration list for PBXNativeTarget "Generate Seed Database" */;
+			buildPhases = (
+				C340C43D17EFABF300C7B46F /* Check Pods Manifest.lock */,
+				C340C43E17EFABF300C7B46F /* Sources */,
+				C340C44817EFABF300C7B46F /* Frameworks */,
+				C340C45017EFABF300C7B46F /* Resources */,
+				C340C45C17EFABF300C7B46F /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Generate Seed Database";
+			productName = "Grid-Eye";
+			productReference = C340C46017EFABF300C7B46F /* Grid-Eye copy.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C3386CA817E7850B005F592A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = administrator;
+			};
+			buildConfigurationList = C3386CAB17E7850B005F592A /* Build configuration list for PBXProject "Grid-Eye" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C3386CA717E7850B005F592A;
+			productRefGroup = C3386CB117E7850B005F592A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C3386CAF17E7850B005F592A /* Grid-Eye */,
+				C340C43C17EFABF300C7B46F /* Generate Seed Database */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C3386CAE17E7850B005F592A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3386CBE17E7850B005F592A /* InfoPlist.strings in Resources */,
+				C3386CC617E7850B005F592A /* Default.png in Resources */,
+				C3386CC817E7850B005F592A /* Default@2x.png in Resources */,
+				C32A5E3818037554002315D9 /* MenuViewcontroller.xib in Resources */,
+				C3386CCA17E7850B005F592A /* Default-568h@2x.png in Resources */,
+				C3386CCD17E7850B005F592A /* MainStoryboard_iPhone.storyboard in Resources */,
+				C378FA2E1818E9A20096A5BC /* TensionCalculator2.html in Resources */,
+				C3386CD017E7850B005F592A /* MainStoryboard_iPad.storyboard in Resources */,
+				C39B6983180C61BB00066138 /* GrideyeSeedDatabase.sqlite in Resources */,
+				C3386CD517E7850B005F592A /* first.png in Resources */,
+				C378FA2B1818E7320096A5BC /* D3_graph.html in Resources */,
+				C3386CD717E7850B005F592A /* first@2x.png in Resources */,
+				C3386CDC17E7850B005F592A /* second.png in Resources */,
+				C3386CDE17E7850B005F592A /* second@2x.png in Resources */,
+				C3873D7717EBECB8007B1EEF /* sensor.json in Resources */,
+				C397BCAE17F1384C00C86ADC /* cells.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C340C45017EFABF300C7B46F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C378FA2C1818E7320096A5BC /* D3_graph.html in Resources */,
+				C378FA2F1818E9A20096A5BC /* TensionCalculator2.html in Resources */,
+				C340C45117EFABF300C7B46F /* InfoPlist.strings in Resources */,
+				C340C45217EFABF300C7B46F /* Default.png in Resources */,
+				C340C45317EFABF300C7B46F /* Default@2x.png in Resources */,
+				C340C45417EFABF300C7B46F /* Default-568h@2x.png in Resources */,
+				C340C45517EFABF300C7B46F /* MainStoryboard_iPhone.storyboard in Resources */,
+				C340C45617EFABF300C7B46F /* MainStoryboard_iPad.storyboard in Resources */,
+				C39B6984180C61BB00066138 /* GrideyeSeedDatabase.sqlite in Resources */,
+				C340C45717EFABF300C7B46F /* first.png in Resources */,
+				C340C45817EFABF300C7B46F /* first@2x.png in Resources */,
+				C340C45917EFABF300C7B46F /* second.png in Resources */,
+				C340C45A17EFABF300C7B46F /* second@2x.png in Resources */,
+				C340C45B17EFABF300C7B46F /* sensor.json in Resources */,
+				C397BCAF17F1384C00C86ADC /* cells.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6E6075EDCB4E4D80956992FD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C340C43D17EFABF300C7B46F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C340C45C17EFABF300C7B46F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F648C05DF0B74805BEE105CA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C3386CAC17E7850B005F592A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3C7C69C17FA5BDD00069FC1 /* Cells.m in Sources */,
+				C35A3646180DB77300262EC8 /* D3ViewController.m in Sources */,
+				C3C7C6A217FA5BDD00069FC1 /* _Sensor.m in Sources */,
+				C3386CC017E7850B005F592A /* main.m in Sources */,
+				C3C7C6A017FA5BDD00069FC1 /* _Cells.m in Sources */,
+				C3386CC417E7850B005F592A /* AppDelegate.m in Sources */,
+				C3386CD317E7850B005F592A /* FirstViewController.m in Sources */,
+				C3386CDA17E7850B005F592A /* SecondViewController.m in Sources */,
+				C31AC6B617F945FF00B5D328 /* OpenGLView.m in Sources */,
+				C32A5E3718037554002315D9 /* MenuViewcontroller.m in Sources */,
+				C3386CEC17E7A28E005F592A /* JSONKit.m in Sources */,
+				C3386CED17E7A28E005F592A /* Reachability.m in Sources */,
+				C3873D7D17EBF275007B1EEF /* Grideye.xcdatamodeld in Sources */,
+				C378FA321818EC070096A5BC /* D3AnalysisViewController.m in Sources */,
+				C3C7C69E17FA5BDD00069FC1 /* Sensor.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C340C43E17EFABF300C7B46F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C39B6981180C611500066138 /* MenuViewcontroller.m in Sources */,
+				C3C7C69D17FA5BDD00069FC1 /* Cells.m in Sources */,
+				C3C7C6A317FA5BDD00069FC1 /* _Sensor.m in Sources */,
+				C340C43F17EFABF300C7B46F /* main.m in Sources */,
+				C3C7C6A117FA5BDD00069FC1 /* _Cells.m in Sources */,
+				C340C44017EFABF300C7B46F /* AppDelegate.m in Sources */,
+				C340C44117EFABF300C7B46F /* FirstViewController.m in Sources */,
+				C378FA331818EC070096A5BC /* D3AnalysisViewController.m in Sources */,
+				C340C44217EFABF300C7B46F /* SecondViewController.m in Sources */,
+				C31AC6B717F945FF00B5D328 /* OpenGLView.m in Sources */,
+				C340C44317EFABF300C7B46F /* JSONKit.m in Sources */,
+				C340C44417EFABF300C7B46F /* Reachability.m in Sources */,
+				C340C44617EFABF300C7B46F /* Grideye.xcdatamodeld in Sources */,
+				C3C7C69F17FA5BDD00069FC1 /* Sensor.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C3386CBC17E7850B005F592A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3386CBD17E7850B005F592A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C3386CCB17E7850B005F592A /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3386CCC17E7850B005F592A /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		C3386CCE17E7850B005F592A /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3386CCF17E7850B005F592A /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C3386CDF17E7850B005F592A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C3386CE017E7850B005F592A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C3386CE217E7850B005F592A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B6B3479A55347BCB95C4851 /* Pods.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Grid-Eye/Grid-Eye-Prefix.pch";
+				INFOPLIST_FILE = "Grid-Eye/Grid-Eye-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C3386CE317E7850B005F592A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B6B3479A55347BCB95C4851 /* Pods.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Grid-Eye/Grid-Eye-Prefix.pch";
+				INFOPLIST_FILE = "Grid-Eye/Grid-Eye-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C340C45E17EFABF300C7B46F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B6B3479A55347BCB95C4851 /* Pods.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Grid-Eye/Grid-Eye-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					RESTKIT_GENERATE_SEED_DB,
+				);
+				INFOPLIST_FILE = "Grid-Eye copy-Info.plist";
+				PRODUCT_NAME = "Grid-Eye copy";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C340C45F17EFABF300C7B46F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B6B3479A55347BCB95C4851 /* Pods.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Grid-Eye/Grid-Eye-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					RESTKIT_GENERATE_SEED_DB,
+				);
+				INFOPLIST_FILE = "Grid-Eye copy-Info.plist";
+				PRODUCT_NAME = "Grid-Eye copy";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C3386CAB17E7850B005F592A /* Build configuration list for PBXProject "Grid-Eye" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3386CDF17E7850B005F592A /* Debug */,
+				C3386CE017E7850B005F592A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3386CE117E7850B005F592A /* Build configuration list for PBXNativeTarget "Grid-Eye" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3386CE217E7850B005F592A /* Debug */,
+				C3386CE317E7850B005F592A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C340C45D17EFABF300C7B46F /* Build configuration list for PBXNativeTarget "Generate Seed Database" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C340C45E17EFABF300C7B46F /* Debug */,
+				C340C45F17EFABF300C7B46F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C3873D7B17EBF275007B1EEF /* Grideye.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C3873D7C17EBF275007B1EEF /* Grideye.xcdatamodel */,
+			);
+			currentVersion = C3873D7C17EBF275007B1EEF /* Grideye.xcdatamodel */;
+			path = Grideye.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C3386CA817E7850B005F592A /* Project object */;
+}

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Generate Seed Database.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
+		<key>Grid-Eye copy 2.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
+		<key>Grid-Eye copy.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
+		<key>Grid-Eye.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>C3386CAF17E7850B005F592A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C340C41D17EFA9A700C7B46F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C340C43C17EFABF300C7B46F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C3873D8117EBF4C1007B1EEF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C3873D9B17EBFA8A007B1EEF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C3873DC117EC01EE007B1EEF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C3873DF217EE4271007B1EEF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C3873E1817EE4CE4007B1EEF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
