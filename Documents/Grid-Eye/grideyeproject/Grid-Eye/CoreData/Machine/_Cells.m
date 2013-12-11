@@ -68,9 +68,8 @@ const struct CellsAttributes CellsAttributes = {
 	.cell7 = @"cell7",
 	.cell8 = @"cell8",
 	.cell9 = @"cell9",
-	.parentSensor = @"parentSensor",
 	.thermistor = @"thermistor",
-	.time = @"time",
+	.timeStamp = @"timeStamp",
 };
 
 const struct CellsRelationships CellsRelationships = {
@@ -423,11 +422,6 @@ const struct CellsFetchedProperties CellsFetchedProperties = {
 	}
 	if ([key isEqualToString:@"cell9Value"]) {
 		NSSet *affectingKey = [NSSet setWithObject:@"cell9"];
-		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
-		return keyPaths;
-	}
-	if ([key isEqualToString:@"parentSensorValue"]) {
-		NSSet *affectingKey = [NSSet setWithObject:@"parentSensor"];
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
 		return keyPaths;
 	}
@@ -2107,32 +2101,6 @@ const struct CellsFetchedProperties CellsFetchedProperties = {
 
 
 
-@dynamic parentSensor;
-
-
-
-- (int16_t)parentSensorValue {
-	NSNumber *result = [self parentSensor];
-	return [result shortValue];
-}
-
-- (void)setParentSensorValue:(int16_t)value_ {
-	[self setParentSensor:[NSNumber numberWithShort:value_]];
-}
-
-- (int16_t)primitiveParentSensorValue {
-	NSNumber *result = [self primitiveParentSensor];
-	return [result shortValue];
-}
-
-- (void)setPrimitiveParentSensorValue:(int16_t)value_ {
-	[self setPrimitiveParentSensor:[NSNumber numberWithShort:value_]];
-}
-
-
-
-
-
 @dynamic thermistor;
 
 
@@ -2159,7 +2127,7 @@ const struct CellsFetchedProperties CellsFetchedProperties = {
 
 
 
-@dynamic time;
+@dynamic timeStamp;
 
 
 

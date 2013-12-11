@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GridEYE</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+	<script src="jquery-2.0.3.min.js" type="text/javascript"></script>
+	<script src="jquery.mobile-1.2.1.min.js" type="text/javascript"></script>
+	<style>
+		.block {
+			height: 50px;
+			width: 50px;
+			margin-left: 1p;
+			border: 1px solid black;
+			float: left;
+		}
+	</style>
+	<script>
+		$(document).ready(function() {
+			$('#submitPressed').click('button', function(e) {
+				alert('Submit pressed');
+			});
+			loadTimestamps();
+		});
+		
+		function loadTimestamps(){
+			var jsonData;
+			
+			$.ajax({
+				type: "GET",
+				url: "http://grideye.no-ip.biz/grideye/webservice.php",
+				data: "",
+				contentType: "application/json",
+				success: function(msg) {
+					jsonData = json_decode(msg);
+					alert("data: "+jsonData);
+				},
+				error: function(e) {
+					alert("error: "+e);	
+				}
+			});
+				
+			
+			//alert(jsonData.timeStamp);
+		}
+	</script>
+</head>
+<body>
+	<div data-role="page">
+		<div data-role="header">
+			<h1>GridEYE</h1>
+		</div>
+		<div data-role="content" style="width: 400px; height: 400px; margin-left: auto; margin-right: auto;">
+			<div style="width: 400px">
+				<div class="ui-grid-c" style="float: left; width: 200px">
+					<div class="ui-block-a block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-b block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-c block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-d block" style="background-color:#b0c4de;"></div>
+				</div>
+				<div class="ui-grid-c" style="float: left; width: 200px">
+					<div class="ui-block-a block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-b block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-c block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-d block" style="background-color:#b0c4de;"></div>
+				</div>
+			</div>
+			<div style="width: 400px">
+				<div class="ui-grid-c" style="float: left; width: 200px">
+					<div class="ui-block-a block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-b block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-c block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-d block" style="background-color:#b0c4de;"></div>
+				</div>
+				<div class="ui-grid-c" style="float: left; width: 200px">
+					<div class="ui-block-a block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-b block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-c block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-d block" style="background-color:#b0c4de;"></div>
+				</div>
+			</div>
+			<div style="width: 400px">
+				<div class="ui-grid-c" style="float: left; width: 200px">
+					<div class="ui-block-a block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-b block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-c block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-d block" style="background-color:#b0c4de;"></div>
+				</div>
+				<div class="ui-grid-c" style="float: left; width: 200px">
+					<div class="ui-block-a block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-b block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-c block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-d block" style="background-color:#b0c4de;"></div>
+				</div>
+			</div>
+			<div style="width: 400px">
+				<div class="ui-grid-c" style="float: left; width: 200px">
+					<div class="ui-block-a block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-b block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-c block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-d block" style="background-color:#b0c4de;"></div>
+				</div>
+				<div class="ui-grid-c" style="float: left; width: 200px">
+					<div class="ui-block-a block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-b block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-c block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-d block" style="background-color:#b0c4de;"></div>
+				</div>
+			</div>
+			<div style="width: 400px">
+				<div class="ui-grid-c" style="float: left; width: 200px">
+					<div class="ui-block-a block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-b block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-c block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-d block" style="background-color:#b0c4de;"></div>
+				</div>
+				<div class="ui-grid-c" style="float: left; width: 200px">
+					<div class="ui-block-a block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-b block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-c block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-d block" style="background-color:#b0c4de;"></div>
+				</div>
+			</div>
+			<div style="width: 400px">
+				<div class="ui-grid-c" style="float: left; width: 200px">
+					<div class="ui-block-a block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-b block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-c block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-d block" style="background-color:#b0c4de;"></div>
+				</div>
+				<div class="ui-grid-c" style="float: left; width: 200px">
+					<div class="ui-block-a block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-b block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-c block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-d block" style="background-color:#b0c4de;"></div>
+				</div>
+			</div>
+			<div style="width: 400px">
+				<div class="ui-grid-c" style="float: left; width: 200px">
+					<div class="ui-block-a block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-b block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-c block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-d block" style="background-color:#b0c4de;"></div>
+				</div>
+				<div class="ui-grid-c" style="float: left; width: 200px">
+					<div class="ui-block-a block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-b block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-c block" style="background-color:#b0c4de;"></div>
+					<div class="ui-block-d block" style="background-color:#b0c4de;"></div>
+				</div>
+			</div>
+		</div>
+		<div data-role="fieldcontain">
+			<label for="submit">Timestamp input:</label>
+			<!--input type="text" name="submit" id="submit" value="" data-mini="true"/-->
+			<textarea name="textarea" id="submit"></textarea>
+		</div>
+		<button id="submitPressed">Submit</button>
+	</div>
+</body>
+</html>

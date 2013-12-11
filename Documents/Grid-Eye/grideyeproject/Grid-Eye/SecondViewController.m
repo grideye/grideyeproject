@@ -8,10 +8,13 @@
 
 #import "SecondViewController.h"
 #import "MenuViewcontroller.h"
+#import <RestKit.h>
 
 @interface SecondViewController ()
 {
     GLfloat red[64];
+    GLfloat blue[64];
+    GLfloat green;
     NSString *cellTemps[64];
     UILabel *labels[64];
     IBOutlet UISegmentedControl *controlSwitch;
@@ -91,33 +94,40 @@
 
 @implementation SecondViewController
 
-@synthesize dataContents, cells, isSleeping, menu;
+@synthesize dataContents, cells, isSleeping;
 @synthesize queryCriteria, controlSwitch, isDoneDrawing, rangeEnabled, isCalculating;
 @synthesize rangeEnableSwitch;
 @synthesize upper, lower;
+@synthesize lowerText, upperText, frameText, requestText;
+@synthesize returnData, popoverController;
+@synthesize secondsPerFrame, queryParams;
+@synthesize activityView;
+@synthesize coreDataContext, httpDataContext;
+@synthesize thermistorValue, countField;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    upper = (int)25;
-    lower = (int)100;
+    secondsPerFrame = 1.0;
+    
+    returnData = [[NSMutableArray alloc] initWithObjects:@"25", @"35", @"", @"1.0", nil];
     
     // Set isSleeping variable
     isSleeping = TRUE;
     rangeEnabled = FALSE;
     
-    // Query Core Data for Cells
-    [self queryDatabase];
-
+    activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    activityView.center=self.view.center;
+    [activityView.layer setBackgroundColor:[[UIColor blackColor] CGColor]];
+    
     // Set up OpenGL SE
     self.glkView.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
     
     // Set the view controller as the delegate for the GLKView subview
     self.glkView.delegate = self;
     
-    // Run the animation
-    [self animate];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -128,13 +138,13 @@
 
 - (void)animate
 {
-    const int secondsPerFrame = 1.0;
     
     // Create a secondary queue for handling animation.
     dispatch_queue_t animationQueue = dispatch_queue_create("Animation Queue", NULL);
-    
+
     // Draw frames for count, with 1 second between each frame.
     dispatch_async(animationQueue, ^{
+        NSLog(@"Frames: %i", self.numFrames);
         for (int i = 0; i < self.numFrames; i++) {
             isDoneDrawing = FALSE;
             
@@ -150,8 +160,9 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.glkView setNeedsDisplay];
                 [self setLabels];
+                self.countField.text = [NSString stringWithFormat:@"%d", self.numFrames];
                 self.viewThermistor.text = [cells.thermistor stringValue];
-                self.viewTimeStamp.text = cells.time;
+                self.viewTimeStamp.text = cells.timeStamp;
             });
             
             // Sleep for 1 second
@@ -164,34 +175,42 @@
 
 - (void)calcData
 {
+    thermistorValue = [[cells valueForKey:@"thermistor"] floatValue];
     isCalculating = TRUE;
     for (int i = 0; i < 64; i++) {
         NSString *theCell = [@"cell" stringByAppendingString:[NSString stringWithFormat:@"%d", i+1]];
         id val = [cells valueForKey:theCell];
-        NSLog(@"cellValue: %@", val);
-        NSLog(@"Cell[%i] float: %f", i, [val floatValue]/200);
+        //NSLog(@"cellValue: %@", val);
+        //NSLog(@"Cell[%i] float: %f", i, [val floatValue]/200);
         float temp_float = [val floatValue];
         
-        NSLog(@"upper: %f, lower: %f, temp: %f", upper, lower, temp_float);
-        
-        if (temp_float > (float)25.0 && temp_float < (float)100.0) {
-            if (rangeEnabled == TRUE) {
-                temp_float = 0.7;
-                red[i] = (GLfloat)temp_float;
-                NSLog(@"rangeEnabled: %f", temp_float);
-            }
-            else{
-                red[i] = (GLfloat)(temp_float/200);
+        if (!rangeEnabled) {
+            temp_float = temp_float - thermistorValue;
+            //NSLog(@"temp_float: %f", temp_float);
+            if (temp_float > 0) {
+                red[i]=(CGFloat)(0+(temp_float/10));
+                blue[i]=(CGFloat)(0.0);
+                //NSLog(@"float value (RED): %f", red[i]);
+            }else if(temp_float == 0){
+                red[i]=(CGFloat)(0.0);
+                blue[i]=(CGFloat)(0.0);
+                green=(CGFloat)(0.0);
+            }else{
+                red[i]=(CGFloat)(0.0);
+                blue[i]=(CGFloat)(0-temp_float/10);
+                //NSLog(@"float value (BLUE): %f", blue[i]);
             }
         }
-        else
-        {
-            if (rangeEnabled == TRUE) {
-                temp_float = 0.0;
-                red[i] = (GLfloat)temp_float;
+        else {
+            if (temp_float >= lower && temp_float <= upper) {
+                red[i]=(CGFloat)(0.0);
+                green=(CGFloat)(0.0);
+                blue[i]=(CGFloat)(0.0);
             }
             else{
-                red[i] = (GLfloat)(temp_float/200);
+                red[i]=(CGFloat)(1.0);
+                green=(CGFloat)(1.0);
+                blue[i]=(CGFloat)(1.0);
             }
         }
         //red[i] = (GLfloat)[val floatValue]/200;
@@ -205,33 +224,113 @@
         NSString *theCell = [@"cell" stringByAppendingString:[NSString stringWithFormat:@"%d", i+1]];
         id val = [cells valueForKey:theCell];
         NSString *text = [val stringValue];
+        int convert = [val integerValue] - thermistorValue;
                 
         UILabel *label = (UILabel*)[self.view viewWithTag:i+1];
-        NSLog(@"label: %@", label);
+        //NSLog(@"label: %@", label);
         if ([text isKindOfClass:[NSString class]]) {
-            label.text = text;
+            label.text = [NSString stringWithFormat:@"%i", convert];
         }
     }
 }
 
-- (void)queryDatabase
+- (void)deleteDBContents:(NSEntityDescription*)entityDescription error:(NSError*)error
 {
-    NSManagedObjectContext *context = [RKManagedObjectStore defaultStore].mainQueueManagedObjectContext;
+    int count = 0;
+    if (dataContents.count != 0) {
+        do {
+            NSLog(@"count %i, counter: %i", dataContents.count, count);
+            
+            [coreDataContext deleteObject:dataContents[count]];
+            NSLog(@"%@ object deleted", entityDescription);
+
+            if (![coreDataContext save:&error]) {
+                NSLog(@"Error deleting %@ - error:%@", entityDescription, error);
+            }
+            count++;
+        } while (count != dataContents.count);
+    }
+    /*if (dataContents.count != 0) {
+        for (int x = 0; x < dataContents.count; x++) {
+            [coreDataContext deleteObject:dataContents[x]];
+            NSLog(@"%@ object deleted", entityDescription);
+        }
+        if (![coreDataContext save:&error]) {
+            NSLog(@"Error deleting %@ - error:%@", entityDescription, error);
+        }
+    }*/
+    
+    [self requestNewData];
+
+}
+
+- (void)performDBRequest:(NSString *)type
+{
+    [activityView startAnimating];
+    [self.view addSubview:activityView];
+    
+    //[[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+    
+    coreDataContext = [RKManagedObjectStore defaultStore].persistentStoreManagedObjectContext;
     NSError *error = nil;
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Cells" inManagedObjectContext:context];
+    NSLog(@"type: %@", type);
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Cells" inManagedObjectContext:coreDataContext];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    if (![type isEqualToString:@"Sensor"]) {
+        request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"timeStamp" ascending:YES]];
+    }
     [request setEntity:entityDescription];
     NSLog(@"Database manager connected!");
     
     // Save returned data objects to NSArray *dataContents
-    dataContents = [context executeFetchRequest:request error:&error];
+    dataContents = [coreDataContext executeFetchRequest:request error:&error];
     NSLog(@"Fetch Results: %i", dataContents.count);
-
-    // Set number of frames from database array size
-    self.numFrames = dataContents.count;
     
-    NSLog(@"dataContents count: %i\n Elements: %@", self.numFrames, dataContents);
-    //NSDictionary *attributes = [entityDescription attributesByName];
+    if ([type isEqualToString:@"Sensor"]) {
+        int count = 0;
+        if (dataContents.count != 0) {
+            do {
+                //NSLog(@"count %i, counter: %i", dataContents.count, count);
+                
+                [coreDataContext deleteObject:dataContents[count]];
+                //NSLog(@"%@ object deleted", entityDescription);
+                
+                if (![coreDataContext save:&error]) {
+                    NSLog(@"Error deleting %@ - error:%@", entityDescription, error);
+                }
+                count++;
+            } while (count != dataContents.count);
+        }
+        [self requestNewData];
+
+        //[self deleteDBContents:entityDescription error:error];
+        type=nil;
+    }else{
+        // Set number of frames from database array size
+        self.numFrames = dataContents.count;
+        
+        NSLog(@"dataContents count: %i\n Elements: %@", self.numFrames, dataContents);
+        //NSDictionary *attributes = [entityDescription attributesByName];
+        [activityView stopAnimating];
+        [activityView removeFromSuperview];
+        
+        //[[UIApplication sharedApplication] endIgnoringInteractionEvents];
+        
+        [self animate];
+        isSleeping = TRUE;
+    }
+}
+
+- (void)requestNewData
+{
+    [[RKObjectManager sharedManager] getObjectsAtPath:@"" parameters:queryParams success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
+        NSLog(@"Result: %@", [mappingResult array]);
+        [self performDBRequest:@"Cells"];
+    }failure:^(RKObjectRequestOperation *operation, NSError *error){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        NSLog(@"Hit error: %@", error);
+    }];
 
 }
 
@@ -256,7 +355,7 @@
             glScissor((squarePlusGap * x),1200-(squarePlusGap * y), squareSide, squareSide);
             
             // Fill the rectangle
-            glClearColor(red[63-(y * 8 + x)], 0.0, 0.0, 1.0);
+            glClearColor(red[63-(y * 8 + x)], green, blue[63-(y*8+x)], 1.0);
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         }
     }
@@ -290,15 +389,59 @@
     }
 }
 
-- (IBAction)selectionMenu:(id)sender {
-    menu = [[MenuViewcontroller alloc] initWithNibName:@"MenuViewcontroller" bundle:nil];
-    //self.menu.delegate = self;
-    menu.modalPresentationStyle = UIModalPresentationFormSheet;
-    menu.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    [self presentViewController:menu animated:YES completion:Nil];
+- (IBAction)menuButtonPressed:(UIButton *)sender {
+    isSleeping = TRUE;
+    
+    MenuViewcontroller *menu = [[MenuViewcontroller alloc] initWithNibName:@"MenuViewcontroller" bundle:nil];
+    menu.delegate = self;
+    
+    popoverController = [[UIPopoverController alloc] initWithContentViewController:menu];
+    CGSize size = CGSizeMake(320, 400);
+    popoverController.popoverContentSize = size;
+    
+    menu.lowerTextField.text = returnData[0];
+    menu.upperTextField.text = returnData[1];
+    menu.sliderTextField.text = returnData[3];
+    menu.theSlider.value = [returnData[3] floatValue];
+    menu.lowerStepper.value = [returnData[0] integerValue];
+    menu.upperStepper.value = [returnData[1] integerValue];
 
-    menu.view.superview.frame = CGRectMake(0, 0, 320, 568);
-    menu.view.superview.center = self.view.center;
+    [popoverController presentPopoverFromRect:sender.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+}
+
+#pragma mark - MenuViewControllerDelegate method
+- (void)setValuesFromMenu:(NSMutableArray*)array
+{
+    isSleeping = FALSE;
+    returnData = array;
+    
+    // Set temp range labels and reference variables
+    [lowerText setText:returnData[0]];
+    lower = [returnData[0] floatValue];
+    upperText.text = returnData[1];
+    upper = [returnData[1] floatValue];
+    
+    // Set frame rate
+    [self.frameText setText:returnData[3]];
+    secondsPerFrame = [returnData[3] floatValue];
+    
+    // Dismiss Popover
+    [popoverController dismissPopoverAnimated:YES];
+    
+    if (![returnData[2] isEqual:@""]) {
+        // Set request label and begin request
+        [requestText setText:returnData[2]];
+        
+        queryParams = [NSDictionary dictionaryWithObject:returnData[2] forKey:@"usertimestamp"];
+        
+        [[NSURLCache sharedURLCache] removeAllCachedResponses];
+        [self performDBRequest:@"Sensor"];
+    }
+}
+
+- (void)closePopover
+{
+    [popoverController dismissPopoverAnimated:YES];
 }
 
 @end

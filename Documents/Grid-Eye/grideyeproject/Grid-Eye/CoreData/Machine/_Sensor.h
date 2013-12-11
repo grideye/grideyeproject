@@ -5,20 +5,18 @@
 
 
 extern const struct SensorAttributes {
-	__unsafe_unretained NSString *sensorID;
-	__unsafe_unretained NSString *thermistor;
-	__unsafe_unretained NSString *timeStamp;
+	 __unsafe_unretained NSString *sensorID;
+	 __unsafe_unretained NSString *timeStamp;
 } SensorAttributes;
 
 extern const struct SensorRelationships {
-	__unsafe_unretained NSString *cells;
+	 __unsafe_unretained NSString *cells;
 } SensorRelationships;
 
 extern const struct SensorFetchedProperties {
 } SensorFetchedProperties;
 
 @class Cells;
-
 
 
 
@@ -36,13 +34,9 @@ extern const struct SensorFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* sensorID;
+@property (nonatomic, retain) NSString* sensorID;
 
 
-
-@property int16_t sensorIDValue;
-- (int16_t)sensorIDValue;
-- (void)setSensorIDValue:(int16_t)value_;
 
 //- (BOOL)validateSensorID:(id*)value_ error:(NSError**)error_;
 
@@ -50,21 +44,7 @@ extern const struct SensorFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* thermistor;
-
-
-
-@property int16_t thermistorValue;
-- (int16_t)thermistorValue;
-- (void)setThermistorValue:(int16_t)value_;
-
-//- (BOOL)validateThermistor:(id*)value_ error:(NSError**)error_;
-
-
-
-
-
-@property (nonatomic, strong) NSString* timeStamp;
+@property (nonatomic, retain) NSString* timeStamp;
 
 
 
@@ -74,7 +54,7 @@ extern const struct SensorFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSSet *cells;
+@property (nonatomic, retain) NSSet *cells;
 
 - (NSMutableSet*)cellsSet;
 
@@ -96,20 +76,8 @@ extern const struct SensorFetchedProperties {
 @interface _Sensor (CoreDataGeneratedPrimitiveAccessors)
 
 
-- (NSNumber*)primitiveSensorID;
-- (void)setPrimitiveSensorID:(NSNumber*)value;
-
-- (int16_t)primitiveSensorIDValue;
-- (void)setPrimitiveSensorIDValue:(int16_t)value_;
-
-
-
-
-- (NSNumber*)primitiveThermistor;
-- (void)setPrimitiveThermistor:(NSNumber*)value;
-
-- (int16_t)primitiveThermistorValue;
-- (void)setPrimitiveThermistorValue:(int16_t)value_;
+- (NSString*)primitiveSensorID;
+- (void)setPrimitiveSensorID:(NSString*)value;
 
 
 

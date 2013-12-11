@@ -7,10 +7,18 @@
 //
 
 #import "AppDelegate.h"
+
+// Restkit APIs
 #import <RestKit/CoreData.h>
 #import <RestKit/RestKit.h>
+#import <RestKit/Testing.h>
+#import <SenTestingKit/SenTestingKit.h>
+
+// System Libraries
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <SystemConfiguration/SystemConfiguration.h>
+
+// Core Data - Data Structures
 #import "CoreData/Human/Sensor.h"
 #import "CoreData/Human/Cells.h"
 
@@ -20,6 +28,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
     NSError *error = nil;
 
     RKLogConfigureByName("RestKit/", RKLogLevelWarning);
@@ -28,26 +37,23 @@
     RKLogConfigureByName("RestKit/CoreData", RKLogLevelTrace);
     
     // Override point for customization after application launch.
-    NSURL *baseURL = [NSURL URLWithString:@"http://grideye.no-ip.biz/grideye/webservice.php"];
-    //AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
+    NSURL *baseURL = [NSURL URLWithString:@"http://grideye.no-ip.biz/grideye/lookbackservice.php"];
     
-    // Initialize Restkit
-    RKObjectManager *objectManager = [RKObjectManager managerWithBaseURL:baseURL];
-
+    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
+    
     //let AFNetworking manage the activity indicator
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
 
-    
-    NSData *data = [NSData dataWithContentsOfURL:baseURL];
-    id response = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
-    NSLog(@"Your JSON object: %@ Or error is: %@", response, error);
-    
+    // We want to work with JSON-Data
+    [client setDefaultHeader:@"Accept" value:RKMIMETypeJSON];
+
+    // Initialize Restkit
+    RKObjectManager *objectManager = [RKObjectManager managerWithBaseURL:baseURL];
     
     //Initialize managed object store
     NSManagedObjectModel *managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];
     RKManagedObjectStore *managedObjectStore = [[RKManagedObjectStore alloc] initWithManagedObjectModel:managedObjectModel];
     objectManager.managedObjectStore = managedObjectStore;
-
     
     // Setup our object mappings
     /**
@@ -57,16 +63,16 @@
     */
     
     RKEntityMapping *sensorMapping = [RKEntityMapping mappingForEntityForName:@"Sensor" inManagedObjectStore:managedObjectStore];
-    sensorMapping.identificationAttributes = @[ @"sensorID"];
+    //sensorMapping.forceCollectionMapping = YES;
+    sensorMapping.identificationAttributes = @[ @"timeStamp"];
     [sensorMapping addAttributeMappingsFromDictionary:@{
      @"timeStamp"     : @"timeStamp",
      @"id"      : @"sensorID",
-     @"thermistor"    : @"thermistor"
      }];
     
     
     RKEntityMapping *cellMapping = [RKEntityMapping mappingForEntityForName:@"Cells" inManagedObjectStore:managedObjectStore];
-    cellMapping.identificationAttributes = @[ @"time"];
+    cellMapping.identificationAttributes = @[ @"timeStamp"];
     [cellMapping addAttributeMappingsFromDictionary:@{
                                                       @"cell1":  @"cell1", @"cell2":  @"cell2", @"cell3":  @"cell3", @"cell4":  @"cell4", @"cell5":  @"cell5",
                                                       @"cell6":  @"cell6", @"cell7":  @"cell7", @"cell8":  @"cell8", @"cell9":  @"cell9", @"cell10":  @"cell10",
@@ -82,22 +88,20 @@
                                                       @"cell56":  @"cell56", @"cell57":  @"cell57", @"cell58":  @"cell58", @"cell59":  @"cell59", @"cell60":  @"cell60",
                                                       @"cell61":  @"cell61", @"cell62":  @"cell62", @"cell63":  @"cell63", @"cell64":  @"cell64",
                                                       @"thermistor":  @"thermistor",
-                                                      @"parentSensor": @"parentSensor",
-                                                      @"time" : @"time"
+                                                      @"timeStamp" : @"timeStamp"
                                                       }];
     
     [sensorMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"cells" toKeyPath:@"cells" withMapping:cellMapping]];
-
+    
     //Update date format so that we can parse Sensor dates properly
     [RKObjectMapping addDefaultDateFormatterForString:@"E MMM d HH:mm:ss Z y" inTimeZone:nil];
     
     // Register our mappings with the provider
     RKResponseDescriptor *responseDescriptorSensor = [RKResponseDescriptor responseDescriptorWithMapping:sensorMapping method:RKRequestMethodAny pathPattern:nil keyPath:@"sensor" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
-    RKResponseDescriptor *responseDescriptorCells = [RKResponseDescriptor responseDescriptorWithMapping:cellMapping method:RKRequestMethodAny pathPattern:nil keyPath:@"cells" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
-    
     [objectManager addResponseDescriptor:responseDescriptorSensor];
-    [objectManager addResponseDescriptor:responseDescriptorCells];
+    
+    
     
     // Database seeding is configured as a copied target of the main application. There are only two differences
     // between the main application target and the 'Generate Seed Database' target:
@@ -110,7 +114,6 @@
     RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelInfo);
     RKLogConfigureByName("RestKit/CoreData", RKLogLevelTrace);
 
-    //NSError *error = nil;
     BOOL success = RKEnsureDirectoryExistsAtPath(RKApplicationDataDirectory(), &error);
     if (!success) {
         RKLogError(@"Failed to create Application Data Directory at path '%@': %@", RKApplicationDataDirectory(), error);
@@ -135,9 +138,9 @@
     */
     [managedObjectStore createPersistentStoreCoordinator];
     NSString *storePath = [RKApplicationDataDirectory() stringByAppendingPathComponent:@"Grideye.sqlite"];
-    NSString *seedPath = [[NSBundle mainBundle] pathForResource:@"GrideyeSeedDatabase" ofType:@"sqlite"];
+    //NSString *seedPath = [[NSBundle mainBundle] pathForResource:@"GrideyeSeedDatabase" ofType:@"sqlite"];
     //NSError *error;
-    NSPersistentStore *persistentStore = [managedObjectStore addSQLitePersistentStoreAtPath:storePath fromSeedDatabaseAtPath:seedPath withConfiguration:nil options:nil error:&error];
+    NSPersistentStore *persistentStore = [managedObjectStore addSQLitePersistentStoreAtPath:storePath fromSeedDatabaseAtPath:nil withConfiguration:nil options:nil error:&error];
     NSAssert(persistentStore, @"Failed to add persistent store with error: %@", error);
                                            
     // Create the managed object contexts
@@ -148,8 +151,6 @@
     
 #endif
 
-
-    
     return YES;
 }
 

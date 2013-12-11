@@ -8,15 +8,25 @@
 
 #import <UIKit/UIKit.h>
 
-@class SecondViewController;
+@protocol MenuDelegate <NSObject>
+@required
+-(void)setValuesFromMenu:(NSArray*)array;
+-(void)closePopover;
+@end
 
-@interface MenuViewcontroller : UIViewController <UIApplicationDelegate> {
-    SecondViewController *second;
+@interface MenuViewcontroller : UIViewController <UIApplicationDelegate, UINavigationControllerDelegate> {
+    IBOutlet UILabel *sliderTextField;
+    IBOutlet UISlider *theSlider;
+    IBOutlet UIStepper *lowerStepper;
+    IBOutlet UIStepper *upperStepper;
 }
 
 @property (strong, nonatomic) IBOutlet UITextField *lowerTextField;
 @property (strong, nonatomic) IBOutlet UITextField *upperTextField;
 @property (strong, nonatomic) IBOutlet UITextField *fetchField;
-@property (nonatomic, strong) SecondViewController *second;
-
+@property (nonatomic, retain) IBOutlet UILabel *sliderTextField;
+@property (nonatomic, retain) IBOutlet UIStepper *lowerStepper;
+@property (nonatomic, retain) IBOutlet UIStepper *upperStepper;
+@property (nonatomic, retain) IBOutlet UISlider *theSlider;
+@property (nonatomic, weak) id <MenuDelegate> delegate;
 @end

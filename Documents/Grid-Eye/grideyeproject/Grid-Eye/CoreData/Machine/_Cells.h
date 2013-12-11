@@ -5,84 +5,82 @@
 
 
 extern const struct CellsAttributes {
-	__unsafe_unretained NSString *cell1;
-	__unsafe_unretained NSString *cell10;
-	__unsafe_unretained NSString *cell11;
-	__unsafe_unretained NSString *cell12;
-	__unsafe_unretained NSString *cell13;
-	__unsafe_unretained NSString *cell14;
-	__unsafe_unretained NSString *cell15;
-	__unsafe_unretained NSString *cell16;
-	__unsafe_unretained NSString *cell17;
-	__unsafe_unretained NSString *cell18;
-	__unsafe_unretained NSString *cell19;
-	__unsafe_unretained NSString *cell2;
-	__unsafe_unretained NSString *cell20;
-	__unsafe_unretained NSString *cell21;
-	__unsafe_unretained NSString *cell22;
-	__unsafe_unretained NSString *cell23;
-	__unsafe_unretained NSString *cell24;
-	__unsafe_unretained NSString *cell25;
-	__unsafe_unretained NSString *cell26;
-	__unsafe_unretained NSString *cell27;
-	__unsafe_unretained NSString *cell28;
-	__unsafe_unretained NSString *cell29;
-	__unsafe_unretained NSString *cell3;
-	__unsafe_unretained NSString *cell30;
-	__unsafe_unretained NSString *cell31;
-	__unsafe_unretained NSString *cell32;
-	__unsafe_unretained NSString *cell33;
-	__unsafe_unretained NSString *cell34;
-	__unsafe_unretained NSString *cell35;
-	__unsafe_unretained NSString *cell36;
-	__unsafe_unretained NSString *cell37;
-	__unsafe_unretained NSString *cell38;
-	__unsafe_unretained NSString *cell39;
-	__unsafe_unretained NSString *cell4;
-	__unsafe_unretained NSString *cell40;
-	__unsafe_unretained NSString *cell41;
-	__unsafe_unretained NSString *cell42;
-	__unsafe_unretained NSString *cell43;
-	__unsafe_unretained NSString *cell44;
-	__unsafe_unretained NSString *cell45;
-	__unsafe_unretained NSString *cell46;
-	__unsafe_unretained NSString *cell47;
-	__unsafe_unretained NSString *cell48;
-	__unsafe_unretained NSString *cell49;
-	__unsafe_unretained NSString *cell5;
-	__unsafe_unretained NSString *cell50;
-	__unsafe_unretained NSString *cell51;
-	__unsafe_unretained NSString *cell52;
-	__unsafe_unretained NSString *cell53;
-	__unsafe_unretained NSString *cell54;
-	__unsafe_unretained NSString *cell55;
-	__unsafe_unretained NSString *cell56;
-	__unsafe_unretained NSString *cell57;
-	__unsafe_unretained NSString *cell58;
-	__unsafe_unretained NSString *cell59;
-	__unsafe_unretained NSString *cell6;
-	__unsafe_unretained NSString *cell60;
-	__unsafe_unretained NSString *cell61;
-	__unsafe_unretained NSString *cell62;
-	__unsafe_unretained NSString *cell63;
-	__unsafe_unretained NSString *cell64;
-	__unsafe_unretained NSString *cell7;
-	__unsafe_unretained NSString *cell8;
-	__unsafe_unretained NSString *cell9;
-	__unsafe_unretained NSString *parentSensor;
-	__unsafe_unretained NSString *thermistor;
-	__unsafe_unretained NSString *time;
+	 __unsafe_unretained NSString *cell1;
+	 __unsafe_unretained NSString *cell10;
+	 __unsafe_unretained NSString *cell11;
+	 __unsafe_unretained NSString *cell12;
+	 __unsafe_unretained NSString *cell13;
+	 __unsafe_unretained NSString *cell14;
+	 __unsafe_unretained NSString *cell15;
+	 __unsafe_unretained NSString *cell16;
+	 __unsafe_unretained NSString *cell17;
+	 __unsafe_unretained NSString *cell18;
+	 __unsafe_unretained NSString *cell19;
+	 __unsafe_unretained NSString *cell2;
+	 __unsafe_unretained NSString *cell20;
+	 __unsafe_unretained NSString *cell21;
+	 __unsafe_unretained NSString *cell22;
+	 __unsafe_unretained NSString *cell23;
+	 __unsafe_unretained NSString *cell24;
+	 __unsafe_unretained NSString *cell25;
+	 __unsafe_unretained NSString *cell26;
+	 __unsafe_unretained NSString *cell27;
+	 __unsafe_unretained NSString *cell28;
+	 __unsafe_unretained NSString *cell29;
+	 __unsafe_unretained NSString *cell3;
+	 __unsafe_unretained NSString *cell30;
+	 __unsafe_unretained NSString *cell31;
+	 __unsafe_unretained NSString *cell32;
+	 __unsafe_unretained NSString *cell33;
+	 __unsafe_unretained NSString *cell34;
+	 __unsafe_unretained NSString *cell35;
+	 __unsafe_unretained NSString *cell36;
+	 __unsafe_unretained NSString *cell37;
+	 __unsafe_unretained NSString *cell38;
+	 __unsafe_unretained NSString *cell39;
+	 __unsafe_unretained NSString *cell4;
+	 __unsafe_unretained NSString *cell40;
+	 __unsafe_unretained NSString *cell41;
+	 __unsafe_unretained NSString *cell42;
+	 __unsafe_unretained NSString *cell43;
+	 __unsafe_unretained NSString *cell44;
+	 __unsafe_unretained NSString *cell45;
+	 __unsafe_unretained NSString *cell46;
+	 __unsafe_unretained NSString *cell47;
+	 __unsafe_unretained NSString *cell48;
+	 __unsafe_unretained NSString *cell49;
+	 __unsafe_unretained NSString *cell5;
+	 __unsafe_unretained NSString *cell50;
+	 __unsafe_unretained NSString *cell51;
+	 __unsafe_unretained NSString *cell52;
+	 __unsafe_unretained NSString *cell53;
+	 __unsafe_unretained NSString *cell54;
+	 __unsafe_unretained NSString *cell55;
+	 __unsafe_unretained NSString *cell56;
+	 __unsafe_unretained NSString *cell57;
+	 __unsafe_unretained NSString *cell58;
+	 __unsafe_unretained NSString *cell59;
+	 __unsafe_unretained NSString *cell6;
+	 __unsafe_unretained NSString *cell60;
+	 __unsafe_unretained NSString *cell61;
+	 __unsafe_unretained NSString *cell62;
+	 __unsafe_unretained NSString *cell63;
+	 __unsafe_unretained NSString *cell64;
+	 __unsafe_unretained NSString *cell7;
+	 __unsafe_unretained NSString *cell8;
+	 __unsafe_unretained NSString *cell9;
+	 __unsafe_unretained NSString *thermistor;
+	 __unsafe_unretained NSString *timeStamp;
 } CellsAttributes;
 
 extern const struct CellsRelationships {
-	__unsafe_unretained NSString *sensor;
+	 __unsafe_unretained NSString *sensor;
 } CellsRelationships;
 
 extern const struct CellsFetchedProperties {
 } CellsFetchedProperties;
 
 @class Sensor;
-
 
 
 
@@ -164,7 +162,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell1;
+@property (nonatomic, retain) NSNumber* cell1;
 
 
 
@@ -178,7 +176,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell10;
+@property (nonatomic, retain) NSNumber* cell10;
 
 
 
@@ -192,7 +190,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell11;
+@property (nonatomic, retain) NSNumber* cell11;
 
 
 
@@ -206,7 +204,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell12;
+@property (nonatomic, retain) NSNumber* cell12;
 
 
 
@@ -220,7 +218,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell13;
+@property (nonatomic, retain) NSNumber* cell13;
 
 
 
@@ -234,7 +232,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell14;
+@property (nonatomic, retain) NSNumber* cell14;
 
 
 
@@ -248,7 +246,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell15;
+@property (nonatomic, retain) NSNumber* cell15;
 
 
 
@@ -262,7 +260,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell16;
+@property (nonatomic, retain) NSNumber* cell16;
 
 
 
@@ -276,7 +274,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell17;
+@property (nonatomic, retain) NSNumber* cell17;
 
 
 
@@ -290,7 +288,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell18;
+@property (nonatomic, retain) NSNumber* cell18;
 
 
 
@@ -304,7 +302,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell19;
+@property (nonatomic, retain) NSNumber* cell19;
 
 
 
@@ -318,7 +316,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell2;
+@property (nonatomic, retain) NSNumber* cell2;
 
 
 
@@ -332,7 +330,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell20;
+@property (nonatomic, retain) NSNumber* cell20;
 
 
 
@@ -346,7 +344,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell21;
+@property (nonatomic, retain) NSNumber* cell21;
 
 
 
@@ -360,7 +358,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell22;
+@property (nonatomic, retain) NSNumber* cell22;
 
 
 
@@ -374,7 +372,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell23;
+@property (nonatomic, retain) NSNumber* cell23;
 
 
 
@@ -388,7 +386,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell24;
+@property (nonatomic, retain) NSNumber* cell24;
 
 
 
@@ -402,7 +400,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell25;
+@property (nonatomic, retain) NSNumber* cell25;
 
 
 
@@ -416,7 +414,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell26;
+@property (nonatomic, retain) NSNumber* cell26;
 
 
 
@@ -430,7 +428,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell27;
+@property (nonatomic, retain) NSNumber* cell27;
 
 
 
@@ -444,7 +442,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell28;
+@property (nonatomic, retain) NSNumber* cell28;
 
 
 
@@ -458,7 +456,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell29;
+@property (nonatomic, retain) NSNumber* cell29;
 
 
 
@@ -472,7 +470,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell3;
+@property (nonatomic, retain) NSNumber* cell3;
 
 
 
@@ -486,7 +484,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell30;
+@property (nonatomic, retain) NSNumber* cell30;
 
 
 
@@ -500,7 +498,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell31;
+@property (nonatomic, retain) NSNumber* cell31;
 
 
 
@@ -514,7 +512,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell32;
+@property (nonatomic, retain) NSNumber* cell32;
 
 
 
@@ -528,7 +526,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell33;
+@property (nonatomic, retain) NSNumber* cell33;
 
 
 
@@ -542,7 +540,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell34;
+@property (nonatomic, retain) NSNumber* cell34;
 
 
 
@@ -556,7 +554,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell35;
+@property (nonatomic, retain) NSNumber* cell35;
 
 
 
@@ -570,7 +568,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell36;
+@property (nonatomic, retain) NSNumber* cell36;
 
 
 
@@ -584,7 +582,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell37;
+@property (nonatomic, retain) NSNumber* cell37;
 
 
 
@@ -598,7 +596,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell38;
+@property (nonatomic, retain) NSNumber* cell38;
 
 
 
@@ -612,7 +610,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell39;
+@property (nonatomic, retain) NSNumber* cell39;
 
 
 
@@ -626,7 +624,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell4;
+@property (nonatomic, retain) NSNumber* cell4;
 
 
 
@@ -640,7 +638,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell40;
+@property (nonatomic, retain) NSNumber* cell40;
 
 
 
@@ -654,7 +652,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell41;
+@property (nonatomic, retain) NSNumber* cell41;
 
 
 
@@ -668,7 +666,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell42;
+@property (nonatomic, retain) NSNumber* cell42;
 
 
 
@@ -682,7 +680,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell43;
+@property (nonatomic, retain) NSNumber* cell43;
 
 
 
@@ -696,7 +694,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell44;
+@property (nonatomic, retain) NSNumber* cell44;
 
 
 
@@ -710,7 +708,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell45;
+@property (nonatomic, retain) NSNumber* cell45;
 
 
 
@@ -724,7 +722,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell46;
+@property (nonatomic, retain) NSNumber* cell46;
 
 
 
@@ -738,7 +736,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell47;
+@property (nonatomic, retain) NSNumber* cell47;
 
 
 
@@ -752,7 +750,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell48;
+@property (nonatomic, retain) NSNumber* cell48;
 
 
 
@@ -766,7 +764,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell49;
+@property (nonatomic, retain) NSNumber* cell49;
 
 
 
@@ -780,7 +778,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell5;
+@property (nonatomic, retain) NSNumber* cell5;
 
 
 
@@ -794,7 +792,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell50;
+@property (nonatomic, retain) NSNumber* cell50;
 
 
 
@@ -808,7 +806,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell51;
+@property (nonatomic, retain) NSNumber* cell51;
 
 
 
@@ -822,7 +820,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell52;
+@property (nonatomic, retain) NSNumber* cell52;
 
 
 
@@ -836,7 +834,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell53;
+@property (nonatomic, retain) NSNumber* cell53;
 
 
 
@@ -850,7 +848,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell54;
+@property (nonatomic, retain) NSNumber* cell54;
 
 
 
@@ -864,7 +862,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell55;
+@property (nonatomic, retain) NSNumber* cell55;
 
 
 
@@ -878,7 +876,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell56;
+@property (nonatomic, retain) NSNumber* cell56;
 
 
 
@@ -892,7 +890,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell57;
+@property (nonatomic, retain) NSNumber* cell57;
 
 
 
@@ -906,7 +904,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell58;
+@property (nonatomic, retain) NSNumber* cell58;
 
 
 
@@ -920,7 +918,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell59;
+@property (nonatomic, retain) NSNumber* cell59;
 
 
 
@@ -934,7 +932,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell6;
+@property (nonatomic, retain) NSNumber* cell6;
 
 
 
@@ -948,7 +946,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell60;
+@property (nonatomic, retain) NSNumber* cell60;
 
 
 
@@ -962,7 +960,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell61;
+@property (nonatomic, retain) NSNumber* cell61;
 
 
 
@@ -976,7 +974,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell62;
+@property (nonatomic, retain) NSNumber* cell62;
 
 
 
@@ -990,7 +988,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell63;
+@property (nonatomic, retain) NSNumber* cell63;
 
 
 
@@ -1004,7 +1002,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell64;
+@property (nonatomic, retain) NSNumber* cell64;
 
 
 
@@ -1018,7 +1016,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell7;
+@property (nonatomic, retain) NSNumber* cell7;
 
 
 
@@ -1032,7 +1030,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell8;
+@property (nonatomic, retain) NSNumber* cell8;
 
 
 
@@ -1046,7 +1044,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* cell9;
+@property (nonatomic, retain) NSNumber* cell9;
 
 
 
@@ -1060,21 +1058,7 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSNumber* parentSensor;
-
-
-
-@property int16_t parentSensorValue;
-- (int16_t)parentSensorValue;
-- (void)setParentSensorValue:(int16_t)value_;
-
-//- (BOOL)validateParentSensor:(id*)value_ error:(NSError**)error_;
-
-
-
-
-
-@property (nonatomic, strong) NSNumber* thermistor;
+@property (nonatomic, retain) NSNumber* thermistor;
 
 
 
@@ -1088,17 +1072,17 @@ extern const struct CellsFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSString* time;
+@property (nonatomic, retain) NSString* timeStamp;
 
 
 
-//- (BOOL)validateTime:(id*)value_ error:(NSError**)error_;
+//- (BOOL)validateTimeStamp:(id*)value_ error:(NSError**)error_;
 
 
 
 
 
-@property (nonatomic, strong) Sensor *sensor;
+@property (nonatomic, retain) Sensor *sensor;
 
 //- (BOOL)validateSensor:(id*)value_ error:(NSError**)error_;
 
@@ -1691,15 +1675,6 @@ extern const struct CellsFetchedProperties {
 
 
 
-- (NSNumber*)primitiveParentSensor;
-- (void)setPrimitiveParentSensor:(NSNumber*)value;
-
-- (int16_t)primitiveParentSensorValue;
-- (void)setPrimitiveParentSensorValue:(int16_t)value_;
-
-
-
-
 - (NSNumber*)primitiveThermistor;
 - (void)setPrimitiveThermistor:(NSNumber*)value;
 
@@ -1709,8 +1684,8 @@ extern const struct CellsFetchedProperties {
 
 
 
-- (NSString*)primitiveTime;
-- (void)setPrimitiveTime:(NSString*)value;
+- (NSString*)primitiveTimeStamp;
+- (void)setPrimitiveTimeStamp:(NSString*)value;
 
 
 

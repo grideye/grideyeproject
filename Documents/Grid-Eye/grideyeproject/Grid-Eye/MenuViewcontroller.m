@@ -10,16 +10,19 @@
 #import "SecondViewController.h"
 
 @interface MenuViewcontroller ()
-//@property (nonatomic, retain) NSString *queryCriteria;
+@property (nonatomic, retain) NSString *queryCriteria;
 @property (nonatomic) NSInteger lowerValue;
 @property (nonatomic) NSInteger upperValue;
+
 @end
 
 @implementation MenuViewcontroller
 
-@synthesize fetchField, lowerTextField, upperTextField;
+@synthesize fetchField, lowerTextField, upperTextField, queryCriteria;
 @synthesize upperValue, lowerValue;
-@synthesize second;
+@synthesize theSlider, upperStepper, lowerStepper;
+@synthesize sliderTextField;
+@synthesize delegate;
 
 bool validated = false;
 
@@ -36,6 +39,7 @@ bool validated = false;
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    queryCriteria = @"";
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,20 +48,14 @@ bool validated = false;
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)closeMenu:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
 - (IBAction)lowStepper:(UIStepper *)sender {
-    NSLog(@"lowerStepper: %f", [sender value]);
-    second.lower = [sender value];
+    //NSLog(@"lowerStepper: %f", [sender value]);
     lowerValue = [sender value];
     lowerTextField.text = [NSString stringWithFormat:@"%i", lowerValue];
 }
 
 - (IBAction)upStepper:(UIStepper *)sender {
-    NSLog(@"upperStepper: %f", [sender value]);
-    second.upper = [sender value];
+    //NSLog(@"upperStepper: %f", [sender value]);
     upperValue = [sender value];
     upperTextField.text = [NSString stringWithFormat:@"%i", upperValue];
 }
@@ -65,7 +63,8 @@ bool validated = false;
     NSError *error = nil;
     
     // Regular expression string
-    NSString *verifyQuery = @"\\d\\d?:\\d\\d";
+    //NSString *verifyQuery = @"\\d\\d?:\\d\\d";
+    NSString *verifyQuery = @"(\\d{4})-(\\d{2})-(\\d{2}) (\\d{2}):(\\d{2}):(\\d{2})";
     
     // Create regular expression to verify input
     NSRegularExpression *regexOptions = [NSRegularExpression regularExpressionWithPattern:verifyQuery options:NSRegularExpressionCaseInsensitive error:&error];
@@ -77,17 +76,33 @@ bool validated = false;
     
     NSLog(@"Finished textRange");
     
-    if (matchRange.location != NSNotFound) {
+    //if (matchRange.location != NSNotFound) {
         validated = TRUE;
-        second.queryCriteria = sender.text;
+        queryCriteria = sender.text;
         NSLog(@"Validated");
-    }
+    //}
+}
+
+- (IBAction)frameSlider:(UISlider *)sender {
+    //NSLog(@"float: %0.2f", sender.value);
+    sliderTextField.text = [NSString stringWithFormat:@"%0.1f", sender.value];
 }
 
 - (IBAction)doneBtn:(id)sender {
     if (validated) {
+        NSLog(@"queryCriteria: %@", queryCriteria);
+
+         NSMutableArray *theArray = [[NSMutableArray alloc] initWithObjects: lowerTextField.text, upperTextField.text, queryCriteria, sliderTextField.text, nil];
+        if (delegate != nil) {
+            [delegate setValuesFromMenu:theArray];
+        }
+    }
+    else {
+         NSMutableArray *theArray = [[NSMutableArray alloc] initWithObjects:lowerTextField.text, upperTextField.text, @"", sliderTextField.text, nil];
         
-        [self dismissViewControllerAnimated:YES completion:nil];
+        if (delegate != nil) {
+            [delegate setValuesFromMenu:theArray];
+        }
     }
 }
 
